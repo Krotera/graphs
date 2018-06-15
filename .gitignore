@@ -1,0 +1,13 @@
+makefile
+
+# Testing lib header file
+catch*
+
+# Testing lib main and test cases
+test-main.cpp
+uutests.cpp
+
+*.gch
+*.out
+*.exe
+*.o
