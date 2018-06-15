@@ -85,7 +85,7 @@ int UUGraph<T>::vertDeg(const T& target_vert) {
 
 /***
 Attempts to insert new_vert in vertices as well as inserting a pointer to
-its place in vertices inside vert_degrees with degree 0,
+it in vertices inside of vert_degrees with degree 0,
     returning false
         if it failed because the vertex was already in vertices
     or true
@@ -114,7 +114,7 @@ in vert_degrees accordingly
         one or both were found in the other's adjacency set, impying the edge already exists
     or true
         if it succeeded
-Note: this graph implementation cannot support redundant edges
+Note: this graph implementation cannot support redundant edges.
  ***/
 template <typename T>
 bool UUGraph<T>::addEdge(const T& vert_A, const T& vert_B) {
@@ -194,13 +194,14 @@ bool UUGraph<T>::delVert(const T& target_vert) {
 };
 
 /***
-Returns the distances (numbers of edge hops) from target_vert to every over vertex in this graph as a pair object with an
-unordered_map and a bool. A BFS traversal is done solely on the component containing target_vert, so vertices located on
-other components will not have entries in the map.
+Returns the distances (numbers of edge hops) from target_vert to every other reachable vertex in this graph
+as a pair object with an unordered_map and a bool.
     The map is empty and the bool is false
         if the graph is empty or target_vert does not exist in the graph
     or the map is populated and the bool is true
         otherwise
+Note: a BFS traversal is done solely on the component containing target_vert, so vertices located
+on other components will not have entries in the returned map.
 ***/
 template <typename T>
 std::pair<std::unordered_map<const T *, unsigned int>, bool> UUGraph<T>::BFS_DistMapFrom(const T& target_vert) {
@@ -384,8 +385,8 @@ as a graph which is connected and in which every vertex has even degree),
         if the graph does not have an Eulerian circuit
     or true
         otherwise
-Note that this is distinct from a graph that contains an Eulerian trail, the heuristic
-for which is being connected and having exactly zero or two vertices have odd degree.
+Note: this is distinct from a graph that contains an Eulerian trail (the heuristic
+for which is being connected and having exactly zero or two vertices with odd degree).
 ***/
 template <typename T>
 bool UUGraph<T>::isEulerian() {
