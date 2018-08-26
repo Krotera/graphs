@@ -5,7 +5,7 @@ catch*
 
 # Testing lib main and test cases
 test-main.cpp
-uutests.cpp
+*tests.cpp
 
 *.gch
 *.out
