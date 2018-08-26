@@ -1,3 +1,7 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
 // uugraph.hpp: an interface for an undirected, unweighted graph supporting generics
 // Very useful page: https://en.wikipedia.org/wiki/Glossary_of_graph_theory_terms
 #ifndef UUGRAPH_HPP
